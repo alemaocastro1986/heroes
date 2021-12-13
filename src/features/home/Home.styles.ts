@@ -12,6 +12,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
     max-width: 600px;
 
     h1 {
@@ -22,13 +23,4 @@ export const Container = styled.div`
       }
     }
   }
-`;
-
-export const PublishersLogos = styled.ul`
-  list-style: none;
-  display: flex;
-  gap: 16px;
-  margin: 0 auto;
-  margin-top: 2rem;
-  padding: 0 16px;
 `;

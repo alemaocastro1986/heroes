@@ -9,6 +9,8 @@ export const Container = styled.div<ContainerProps>`
   border-radius: 8px;
   background: #e7e7e7;
 
+  width: 100%;
+
   display: flex;
   overflow: hidden;
   transition: all 0.3s;

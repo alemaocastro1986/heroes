@@ -1,13 +1,13 @@
 import React from "react";
-import Header from "./shared/components/Header";
+import { Routes, Route, Link } from "react-router-dom";
+
 import { HomePage } from "./features/home/Home.page";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <HomePage />
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+    </Routes>
   );
 }
 
