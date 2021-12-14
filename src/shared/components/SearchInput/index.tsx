@@ -2,24 +2,34 @@ import React, { InputHTMLAttributes } from "react";
 
 import { Container } from "./styles";
 
-interface SearchInputProps extends InputHTMLAttributes<HTMLInputElement> {}
+interface SearchInputProps extends InputHTMLAttributes<HTMLInputElement> {
+  onClickGo?: () => Promise<void> | void;
+}
 
-const SearchInput: React.FC<SearchInputProps> = (props) => {
-  const [isFocused, setIsfocused] = React.useState(false);
+export const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
+  ({ onClickGo, ...props }, ref) => {
+    const [isFocused, setIsfocused] = React.useState(false);
 
-  function handleFocus() {
-    setIsfocused(true);
+    function handleFocus() {
+      setIsfocused(true);
+    }
+
+    function handleBlur() {
+      setIsfocused(false);
+    }
+    return (
+      <Container isFocused={isFocused}>
+        <input
+          {...props}
+          ref={ref}
+          type="text"
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        />
+        <button type="button" onClick={onClickGo}>
+          GO
+        </button>
+      </Container>
+    );
   }
-
-  function handleBlur() {
-    setIsfocused(false);
-  }
-  return (
-    <Container isFocused={isFocused}>
-      <input type="text" {...props} onFocus={handleFocus} onBlur={handleBlur} />
-      <button type="button">GO</button>
-    </Container>
-  );
-};
-
-export default SearchInput;
+);

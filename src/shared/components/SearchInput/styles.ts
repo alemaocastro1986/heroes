@@ -18,7 +18,7 @@ export const Container = styled.div<ContainerProps>`
   border: 2px solid ${(props) => (props.isFocused ? "tomato" : "white")};
   input {
     height: 44px;
-    flex: 1;
+    width: 100%;
     border: none;
     background: transparent;
     padding: 0 16px;
@@ -32,6 +32,7 @@ export const Container = styled.div<ContainerProps>`
 
   button {
     padding: 0 16px;
+    min-width: 32px;
     border: 0;
     background: tomato;
     /* border-radius: 0 8px 8px 0; */
