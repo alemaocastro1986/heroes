@@ -23,4 +23,13 @@ export const Container = styled.div`
       }
     }
   }
+
+  @media (max-width: 720px) {
+    padding: 20px;
+    main {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  }
 `;
