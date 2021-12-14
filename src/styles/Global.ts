@@ -7,7 +7,20 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box
   }
 
+  @media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
   body {
     font-family: 'Readex Pro', sans-serif;
+    scroll-behavior: smooth;
   }
 `;
