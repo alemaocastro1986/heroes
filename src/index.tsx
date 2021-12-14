@@ -5,14 +5,17 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Header from "./shared/components/Header";
+import { HeroesProvider } from "./shared/contexts/HeroesContext";
 import { GlobalStyles } from "./styles/Global";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <GlobalStyles />
-      <Header />
-      <App />
+      <HeroesProvider>
+        <GlobalStyles />
+        <Header />
+        <App />
+      </HeroesProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
